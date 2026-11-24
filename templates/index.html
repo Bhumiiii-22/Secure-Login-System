@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">ACCOUNT SECURITY DEMO</span>
+    <h1>Simple access.<br><span>Stronger security.</span></h1>
+    <p>A secure authentication starter project with password hashing, protected sessions, CSRF protection and parameterized database queries.</p>
+    <div class="actions">
+      <a class="button primary" href="{{ url_for('register') }}">Create an account</a>
+      <a class="button secondary" href="{{ url_for('login') }}">Sign in</a>
+    </div>
+  </div>
+  <div class="security-card">
+    <div class="shield">✓</div>
+    <h3>Security features</h3>
+    <ul>
+      <li>Password hashes, never plain-text passwords</li>
+      <li>CSRF protection on forms</li>
+      <li>Parameterized SQLite queries</li>
+      <li>HTTP-only session cookies</li>
+      <li>Protected dashboard and logout</li>
+    </ul>
+    <p class="muted small">Educational starter. Review the README before public deployment.</p>
+  </div>
+</section>
+{% endblock %}

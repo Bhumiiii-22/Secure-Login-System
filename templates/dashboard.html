@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · SecureAuth{% endblock %}
+{% block content %}
+<section class="dashboard">
+  <span class="eyebrow">PRIVATE AREA</span>
+  <h1>Welcome, {{ username }} 👋</h1>
+  <p class="muted">You are signed in. This page is protected and requires an authenticated session.</p>
+  <div class="feature-grid">
+    <div class="feature"><strong>01</strong><h3>Authenticated</h3><p>Your login session is active.</p></div>
+    <div class="feature"><strong>02</strong><h3>Password security</h3><p>Your password is stored as a secure hash.</p></div>
+    <div class="feature"><strong>03</strong><h3>Protected forms</h3><p>POST forms use CSRF tokens.</p></div>
+  </div>
+  <form method="post" action="{{ url_for('logout') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button class="button secondary" type="submit">Log out</button>
+  </form>
+</section>
+{% endblock %}

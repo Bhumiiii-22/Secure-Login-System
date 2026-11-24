@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Sign in · SecureAuth{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <div class="auth-card">
+    <span class="eyebrow">WELCOME BACK</span>
+    <h1>Sign in</h1>
+    <p class="muted">Use your username or email address.</p>
+    <form method="post">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <label>Username or email</label>
+      <input name="identity" required autocomplete="username" placeholder="Username or email">
+      <label>Password</label>
+      <input type="password" name="password" required autocomplete="current-password" placeholder="Your password">
+      <button class="button primary full" type="submit">Sign in securely</button>
+    </form>
+    <p class="form-bottom">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
+  </div>
+</div>
+{% endblock %}
